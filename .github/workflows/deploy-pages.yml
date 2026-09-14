@@ -58,6 +58,10 @@ jobs:
       
         run: npm run build -- --base=/nike-court-vision-store/
         
+      - name: Copy product image
+      
+        run: cp nike-court-vision-hero.png dist/nike-court-vision-hero.png
+        
       - name: Upload Pages artifact
       
         uses: actions/upload-pages-artifact@v3
@@ -88,6 +92,8 @@ jobs:
         
         uses: actions/deploy-pages@v4
         
+
+
 
 
 
