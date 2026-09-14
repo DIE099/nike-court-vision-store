@@ -62,6 +62,10 @@ jobs:
       
         run: cp nike-court-vision-hero.png dist/nike-court-vision-hero.png
         
+      - name: Fix product image URL
+      
+        run: find dist/assets -type f -name '*.js' -exec sed -i 's#\./nike-court-vision-hero.png#/nike-court-vision-store/nike-court-vision-hero.png#g' {} +
+        
       - name: Upload Pages artifact
       
         uses: actions/upload-pages-artifact@v3
@@ -92,6 +96,8 @@ jobs:
         
         uses: actions/deploy-pages@v4
         
+
+
 
 
 
