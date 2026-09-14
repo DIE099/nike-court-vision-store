@@ -64,7 +64,7 @@ jobs:
         
       - name: Fix product image URL
       
-        run: find dist/assets -type f -name '*.js' -exec sed -i 's#\./nike-court-vision-hero.png#/nike-court-vision-store/nike-court-vision-hero.png#g' {} +
+        run: find dist/assets -type f -name '*.js' -exec sed -i 's#/nike-court-vision-hero.png#/nike-court-vision-store/nike-court-vision-hero.png#g; s#\./nike-court-vision-hero.png#/nike-court-vision-store/nike-court-vision-hero.png#g' {} +
         
       - name: Upload Pages artifact
       
