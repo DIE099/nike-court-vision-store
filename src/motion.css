@@ -1,0 +1,79 @@
+/* Motion layer: editorial product-launch energy */
+
+:root { --ease-out: cubic-bezier(.23,1,.32,1); }
+
+body { overflow-x: hidden; }
+
+.announcement { animation: revealDown .7s var(--ease-out) both; }
+
+.nav { animation: revealDown .8s .08s var(--ease-out) both; }
+
+.hero-copy > * { animation: revealUp .8s var(--ease-out) both; }
+
+.hero-copy .eyebrow { animation-delay: .18s; }
+
+.hero-copy h1 { animation-delay: .25s; }
+
+.hero-copy .hero-description { animation-delay: .34s; }
+
+.hero-copy .hero-cta-row { animation-delay: .42s; }
+
+.hero-copy .hero-meta { animation-delay: .5s; }
+
+.hero-stage { animation: stageReveal 1s .22s var(--ease-out) both; perspective: 900px; }
+
+.hero-stage::after { content: ""; position: absolute; inset: 8% 4%; border: 1px solid rgba(16,16,16,.08); pointer-events: none; animation: ringPulse 4s ease-in-out infinite; }
+
+.hero-shoe { filter: drop-shadow(0 30px 20px rgba(16,16,16,.16)); transition: filter .25s var(--ease-out); animation: shoeFloat 4.8s ease-in-out infinite; will-change: transform; }
+
+.hero-stage:hover .hero-shoe { filter: drop-shadow(0 42px 27px rgba(16,16,16,.22)); }
+
+.hero-stage.is-dragging .hero-shoe { animation-play-state: paused; cursor: grabbing; }
+
+.ring { animation: ringSpin 16s linear infinite; }
+
+.ring-two { animation-direction: reverse; animation-duration: 22s; }
+
+.stage-stamp { animation: stampIn 1s .7s var(--ease-out) both; }
+
+.ticker-track { animation: tickerMove 24s linear infinite; }
+
+.primary-button, .text-button, .nav-actions button, .swatch, .sizes button, .quantity button, .circle-arrow, .footer-links button { transition: transform .18s var(--ease-out), color .18s var(--ease-out), background-color .18s var(--ease-out), box-shadow .18s var(--ease-out); }
+
+.primary-button:hover { transform: translateY(-3px); box-shadow: 0 12px 24px rgba(16,16,16,.17); }
+
+.primary-button:active, .text-button:active, .nav-actions button:active, .sizes button:active, .quantity button:active { transform: scale(.97); }
+
+.nav-actions button:hover { transform: translateY(-3px) rotate(-4deg); color: var(--red); }
+
+.product-visual img { animation: productFloat 5.4s ease-in-out infinite; transition: transform .55s var(--ease-out), filter .55s var(--ease-out); }
+
+.product-visual:hover img { transform: scale(1.08) rotate(-3deg); filter: drop-shadow(0 28px 24px rgba(16,16,16,.18)); }
+
+.detail-card, .quote-card { animation: revealUp .8s var(--ease-out) both; }
+
+.detail-card:nth-child(1) { animation-delay: .05s; }
+
+.detail-card:nth-child(2) { animation-delay: .13s; }
+
+.detail-card:nth-child(3) { animation-delay: .21s; }
+
+.detail-card:hover { transform: translateY(-6px); box-shadow: 0 16px 30px rgba(16,16,16,.08); transition: transform .25s var(--ease-out), box-shadow .25s var(--ease-out); }
+
+@keyframes revealUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+@keyframes revealDown { from { opacity: 0; transform: translateY(-18px); } to { opacity: 1; transform: translateY(0); } }
+
+@keyframes stageReveal { from { opacity: 0; transform: translateX(30px) scale(.96); } to { opacity: 1; transform: translateX(0) scale(1); } }
+
+@keyframes shoeFloat { 0%,100% { margin-top: 0; } 50% { margin-top: -10px; } }
+
+@keyframes productFloat { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-8px) rotate(-1.5deg); } }
+
+@keyframes ringPulse { 0%,100% { opacity: .3; transform: scale(.98); } 50% { opacity: .7; transform: scale(1.02); } }
+
+@keyframes ringSpin { to { transform: rotate(360deg); } }
+
+@keyframes stampIn { from { opacity: 0; transform: translateX(-12px); } to { opacity: 1; transform: translateX(0); } }
+
+@keyframes tickerMove { from { transform: translateX(0); } to { transform: transl
